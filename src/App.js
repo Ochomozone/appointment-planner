@@ -11,13 +11,7 @@ function App() {
   contacts and appointments 
   */
 
-const [contacts, setContacts] = useState( [
-  {
-    name: 'Name 1',
-    phone: 07000111111,
-    email: 'email1'
-  }
-] );
+const [contacts, setContacts] = useState( [] );
 const addContact = (newName, newPhone, newEmail) => {
 const newContact = {
   name: newName,
