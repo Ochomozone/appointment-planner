@@ -22,15 +22,14 @@ export const ContactsPage = (props) => {
     Add contact info and clear data
     if the contact name is not a duplicate
     */
-   if  (!duplicated) {
-    props.newContact(name, phone, email).then(() =>
-      {
-        setName('');
-      setPhone('');
-      setEmail('');
-    }
-    )
-   }
+    if (!duplicated) {
+      props.newContact(name, phone, email)
+        
+          setName('');
+          setPhone('');
+          setEmail('');
+        console.log('New contact prop successfully received');
+    } else { alert ('Contact is duplicated')}
    
   };
 
@@ -38,6 +37,12 @@ export const ContactsPage = (props) => {
   Using hooks, check for contact name in the 
   contacts array variable in props
   */
+  const match = props.contacts.find( (element) => {
+    return element.email === email;
+  });
+  if (match !== undefined) {
+    setDuplicated(true);
+  }
 
   return (
     <div>

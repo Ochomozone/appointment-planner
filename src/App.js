@@ -18,6 +18,7 @@ const newContact = {
   phone: newPhone,
   email: newEmail
 };
+console.log('New contact submitted');
   setContacts((prevContacts) => [newContact, ...prevContacts]);
 };
 const [appointments, setAppointments] = useState( [] );
