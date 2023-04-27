@@ -2,17 +2,17 @@ import React from "react";
 
 export const ContactForm =(props) => { 
   const handleNameChange = ({target}) => {
-    const {name, value} =target;
+    const {value} =target;
     props.setName(value);
   };
 
   const handlePhoneChange = ({target}) => {
-    const {name, value} =target;
+    const {value} =target;
     props.setPhone(value);
   };
 
   const handleEmailChange = ({target}) => {
-    const {name, value} =target;
+    const {value} =target;
     props.setEmail(value);
   };
 
@@ -29,12 +29,13 @@ export const ContactForm =(props) => {
       <input 
         type='text' 
         placeholder='Enter Phone' 
-        // pattern='^(+254|0)([7][0-9]|[1][0-1]){1}[0-9]{1}[0-9]{6}$' 
+        pattern='[0][0-9]{9}' 
         value={props.phone} 
         onChange={handlePhoneChange} 
       />
       <input 
         type='text' 
+        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
         placeholder='Enter Email' 
         value={props.email} 
         onChange={handleEmailChange} 

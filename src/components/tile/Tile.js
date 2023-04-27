@@ -7,8 +7,9 @@ export const Tile = (props) =>  {
   return (
     <div className='tile-container'>
       <p className='tile-title'>{props.name}</p>
-      {details.map(item => <p className='tile' >{item}</p> )}
-      {/* <p className='tile' >{details}</p> */}
+      {details.map((item, index) => (
+        <p className='tile' key={index}>{item}</p>
+      ))}
     </div>
-     );
+  );
 };
