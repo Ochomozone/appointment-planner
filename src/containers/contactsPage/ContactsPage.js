@@ -28,7 +28,7 @@ export const ContactsPage = (props) => {
           setName('');
           setPhone('');
           setEmail('');
-        console.log('New contact prop successfully received');
+        
     } else { alert ('Contact is duplicated')}
    
   };
@@ -37,12 +37,14 @@ export const ContactsPage = (props) => {
   Using hooks, check for contact name in the 
   contacts array variable in props
   */
-  const match = props.contacts.find( (element) => {
+ useEffect (() =>
+  {const match = props.contacts.find( (element) => {
     return element.email === email;
   });
   if (match !== undefined) {
     setDuplicated(true);
   }
+}, [name, email, props.contacts])
 
   return (
     <div>
